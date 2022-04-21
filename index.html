@@ -4,9 +4,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leeminseo Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Leeminseo's Portfolio</title>
+    <script src="https://kit.fontawesome.com/8ba24465fe.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <div class="menubar" style="z-index: 1;">
+        <a href="#education" style="color: black; text-decoration: none;">
+            <i class="fa-solid fa-graduation-cap" style="color: black;"></i>
+            학력/경력
+        </a>
+        <br>
+        <br>
+        <a href="#project" style="color: black; text-decoration: none;">
+            <i class="fa-solid fa-book" style="color: black;"></i>
+            프로젝트
+        </a>
+        <br><br>
+        <a href="#technology" style="color: black; text-decoration: none;">
+            <i class="fa-solid fa-code" style="color: black;"></i>
+            기술
+        </a>
+    </div>
+    <header class="container">
+        <div class="bannerImg">
+            <div class="banner" style="z-index: 0;">
+                <div class="namebox">
+                    <h1>Developer 이민서</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main style="margin-left: 120px;">
+        <div id="education" class="index">
+            <h1>
+                    <i class="fa-solid fa-graduation-cap" style="color: black; font-size: 50px;"></i>
+                    학력/경력
+                </h1>
+                <div class="education-box">
+                    <img src="./img/daykey.jpg" alt="daykey" class="img-icon">
+                    <h2>대기고등학교</h2>
+                    <span>2019.03-2021.12</span>
+                    <h4>과학중점 과정</h4>
+                </div>
+                <div class="education-box">
+                    <img src="./img/soongsil.png" alt="soongsil univ" class="img-icon" style="height: 69px;">
+                    <h2>숭실대학교</h2>
+                    <span>2022.03-Current</span>
+                    <h4>컴퓨터공학부 1학년</h4>
+                </div>
+        </div>
+        <div id="project" class="index">
+            <h1>
+                <i class="fa-solid fa-book" style="color: black; font-size: 50px;"></i>
+                &nbsp;프로젝트
+            </h1>
+            <h2>교육</h2>
+            <ul>
+                <li>고2 대상 Tensorflow와 인공지능 수업(2020)</li>
+                <li>고3 대상 Manim 수업(2021)</li>
+            </ul>
+            <h2>아두이노</h2>
+            <ul>
+                <li>스마트 아기 요람 제작(2019)</li>
+                <li>미세먼지 측정/알림 모듈 제작(2019)</li>
+                <li>인공지능 활용 모션인식 게임 제작(2020)</li>
+            </ul>
+            <h2>인공지능</h2>
+            <ul>
+                <li>SVC, Decision Tree Classification 비교 분석(2019)</li>
+                <li>이미지 속 물체 인식 인공지능 개발(2020)</li>
+                <li>십이장기 게임 인공지능 개발(2020)</li>
+                <li>언어 생성 인공지능 탐구(2021)</li>
+                <li>음성-악기 소리 합성 인공지능 탐구(2021)</li>
+            </ul>
+            <h2>Unity</h2>
+            <ul>
+                <li>횡스크롤 게임 제작(2019-2020)</li>
+            </ul>
+            <h2>앱 개발</h2>
+            <ul>
+                <li>수능 영어 문제 제작 프로그램 개발(2021)</li>
+                <li>보호계전기 정상 커브 시각화 프로그램 개발(2022)</li>
+            </ul>
+        </div>
+        <div id="technology" class="index">
+            <h1>
+                <i class="fa-solid fa-code" style="color: black; font-size: 50px;"></i>
+                기술
+            </h1>
+            <div class="language" style="width: 100px;">C</div>
+            <div class="language">Java</div>
+            <div class="language">Python</div>
+            <div class="language">HTML</div>
+            <div class="language">C#</div>
+            <div class="language">JavaScript</div>
+            <br>
+            <br>
+            <br>
+            <div class="language">Keras</div>
+            <div class="language">Arduino</div>
+            <div class="language">Manim</div>
+            <div class="language">Tensorflow</div>
+        </div>
+    </main>
+    <div class="contact">
+        <h2>Contact</h2>
+        <h3><i class="fa-solid fa-envelope"></i>  leeminseo0923@gmail.com</h3>
+    </div>
 </body>
 </html>
