@@ -38,6 +38,7 @@ fetch(url)
         var addReview = document.createElement("i");
         addReview.classList.add("fa-solid");
         addReview.classList.add("fa-plus");
+        addReview.style.marginLeft = "min(1vw, 1vh)";
         addReview.style.fontSize = "min(3vw, 3vh)";
 
         var addButton = document.createElement("a");

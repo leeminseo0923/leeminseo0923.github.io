@@ -1,3 +1,17 @@
 #title {
   text-align: center;
 }
+
+form {
+  text-align: center;
+}
+
+#reviewContent {
+  width: 80vw;
+  height: 80vh;
+}
+
+#key {
+  width: 77vw;
+  height: 3vh;
+}
