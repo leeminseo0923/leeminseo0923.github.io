@@ -26,7 +26,7 @@ submit.addEventListener("submit", (event) => {
 
   const body = {
     message: message,
-    content: btoa(encodeURIComponent(content)),
+    content: btoa(decodeURIComponent(encodeURIComponent(content))),
   };
 
   fetch(url, {
