@@ -42,7 +42,7 @@ fetch(url)
 
         var addButton = document.createElement("a");
         addButton.appendChild(addReview);
-        addButton.href = "./post.html";
+        addButton.href = `./post.html?${innertext}`;
 
         fileContainer.appendChild(questionName);
         fileContainer.appendChild(containerUrl);
