@@ -18,17 +18,27 @@ fetch(url)
         extensionId = fileName.indexOf(".c");
         var innertext = fileName.slice(0, extensionId);
 
-        var fileContainer = document.createElement("ol");
-        fileContainer.classList.add("textList");
+        var fileList = document.createElement("ol");
+
+        var fileContainer = document.createElement("div");
+        fileList.classList.add("textList");
 
         var containerUrl = document.createElement("a");
         containerUrl.href = fileUrl;
-        containerUrl.innerText = innertext;
+        containerUrl.innerText = "source code..";
+        containerUrl.style.display = "inline";
+        containerUrl.style.textDecoration = "underline";
+        containerUrl.style.color = "gray";
 
-        console.log(fileContainer);
+        fileContainer.innerText = innertext;
+        fileContainer.style.display = "inline-block";
 
-        fileContainer.appendChild(containerUrl);
-        psList.appendChild(fileContainer);
+        fileList.style.justifyContent = "space-between";
+
+        fileList.appendChild(fileContainer);
+        fileList.appendChild(containerUrl);
+
+        psList.appendChild(fileList);
       }
     });
   })
