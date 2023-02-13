@@ -4,6 +4,13 @@
   text-align: center;
 }
 
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 #category {
   color: black;
   border-radius: 10px;
@@ -54,8 +61,11 @@
   height: 4vh;
 
   margin-top: 2vh;
-  display: flex;
-  padding-right: 3vw;
+  display: inline-flex;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-right: 0.5vw;
+  justify-content: space-between;
 
   background-color: white;
   color: black;

@@ -1,4 +1,4 @@
-var psList = document.getElementById("acimpic");
+var psList = document.getElementById("acmicpc");
 
 const owner = "leeminseo0923";
 const repo = "Competive-Programming";
@@ -19,23 +19,30 @@ fetch(url)
         var innertext = fileName.slice(0, extensionId);
 
         var fileList = document.createElement("ol");
+        fileList.style.display = "block";
 
-        var fileContainer = document.createElement("a");
-        fileContainer.href = `https://acmicpc.net/problem/${innertext}`;
-        fileList.classList.add("textList");
+        var fileContainer = document.createElement("div");
+        fileContainer.classList.add("textList");
+
+        var questionName = document.createElement("a");
+        questionName.href = `https://acmicpc.net/problem/${innertext}`;
 
         var containerUrl = document.createElement("a");
         containerUrl.href = fileUrl;
         containerUrl.innerText = "source code..";
         containerUrl.classList.add("codeUrl");
 
-        fileContainer.innerText = innertext;
-        fileContainer.style.display = "inline-block";
+        questionName.innerText = innertext;
+        questionName.style.display = "inline-block";
 
-        fileList.style.justifyContent = "space-between";
+        var addReview = document.createElement("i");
+        addReview.classList.add("fa-solid");
+        addReview.classList.add("fa-plus");
 
+        fileContainer.appendChild(questionName);
+        fileContainer.appendChild(containerUrl);
         fileList.appendChild(fileContainer);
-        fileList.appendChild(containerUrl);
+        fileList.appendChild(addReview);
 
         psList.appendChild(fileList);
       }
