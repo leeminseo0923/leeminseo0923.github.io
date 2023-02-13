@@ -57,14 +57,14 @@ body {
 
   line-height: 4vh;
 
-  width: 90%;
+  width: 85%;
   height: 4vh;
 
   margin-top: 2vh;
   display: inline-flex;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  margin-right: 0.5vw;
+  padding-left: min(1vw, 1vh);
+  padding-right: min(1vw, 1vh);
+  margin-right: min(0.5vw, 0.5vh);
   justify-content: space-between;
 
   background-color: white;

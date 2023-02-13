@@ -19,7 +19,7 @@ fetch(url)
         var innertext = fileName.slice(0, extensionId);
 
         var fileList = document.createElement("ol");
-        fileList.style.display = "block";
+        fileList.style.width = "max(38vw, 38vh)";
 
         var fileContainer = document.createElement("div");
         fileContainer.classList.add("textList");
@@ -38,11 +38,16 @@ fetch(url)
         var addReview = document.createElement("i");
         addReview.classList.add("fa-solid");
         addReview.classList.add("fa-plus");
+        addReview.style.fontSize = "min(3vw, 3vh)";
+
+        var addButton = document.createElement("a");
+        addButton.appendChild(addReview);
+        addButton.href = "./post.html";
 
         fileContainer.appendChild(questionName);
         fileContainer.appendChild(containerUrl);
         fileList.appendChild(fileContainer);
-        fileList.appendChild(addReview);
+        fileList.appendChild(addButton);
 
         psList.appendChild(fileList);
       }
