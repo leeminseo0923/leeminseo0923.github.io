@@ -1,7 +1,13 @@
 #main {
   padding-top: 20vh;
-  font-size: 3vw;
+  font-size: max(3vw, 3vh);
   text-align: center;
+}
+
+.codeUrl {
+  display: inline;
+  text-decoration: underline;
+  color: gray;
 }
 
 .contents-container {
@@ -12,17 +18,19 @@
   display: inline-block;
   overflow: scroll;
   text-align: left;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  width: 40vw;
+  padding-left: max(1vw, 1vh);
+  padding-right: max(1vw, 1vh);
+  width: max(40vw, 40vh);
   height: 80vh;
   background-color: rgba(164, 161, 161, 0.281);
   border-radius: 10px;
 }
 
 .textList {
-  padding-top: 2vh;
-  padding-bottom: 0.75vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+
+  line-height: 4vh;
 
   width: 90%;
   height: 4vh;
@@ -37,7 +45,7 @@
 }
 
 .title {
-  font-size: calc(2vw+2vh);
+  font-size: max(2vw, 2vh);
   text-align: center;
 }
 
@@ -47,7 +55,7 @@ a {
 }
 
 .fa-arrow-left {
-  font-size: calc(1vw + 1vh);
+  font-size: min(3vw, 3vh);
 }
 #back-button {
   padding-left: 10px;
@@ -59,9 +67,9 @@ a {
 }
 
 #menu-line {
-  width: 37vw;
+  width: max(37vw, 37vh);
   background-color: black;
-  height: 0.6vh;
+  height: min(0.6vh, 0.6vw);
 }
 
 #menu {
@@ -92,11 +100,11 @@ ul {
 .menu-item {
   display: inline-block;
   text-align: left;
-  font-size: 1.3vw;
+  font-size: max(1.3vw, 1.3vh);
   background-color: rgba(164, 161, 161, 0.281);
   padding: 1% 0 1% 1%;
   margin: 5px 0px 5px 0px;
-  width: 10vw;
+  width: max(10vw, 10vh);
 }
 
 .menu-text {

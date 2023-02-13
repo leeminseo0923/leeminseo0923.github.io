@@ -26,9 +26,7 @@ fetch(url)
         var containerUrl = document.createElement("a");
         containerUrl.href = fileUrl;
         containerUrl.innerText = "source code..";
-        containerUrl.style.display = "inline";
-        containerUrl.style.textDecoration = "underline";
-        containerUrl.style.color = "gray";
+        containerUrl.classList.add("codeUrl");
 
         fileContainer.innerText = innertext;
         fileContainer.style.display = "inline-block";
