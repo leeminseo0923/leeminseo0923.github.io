@@ -1,4 +1,4 @@
-var psList = document.getElementById("pslist");
+var psList = document.getElementById("acimpic");
 
 const owner = "leeminseo0923";
 const repo = "Competive-Programming";
@@ -20,7 +20,8 @@ fetch(url)
 
         var fileList = document.createElement("ol");
 
-        var fileContainer = document.createElement("div");
+        var fileContainer = document.createElement("a");
+        fileContainer.href = `https://acmicpc.net/problem/${innertext}`;
         fileList.classList.add("textList");
 
         var containerUrl = document.createElement("a");
