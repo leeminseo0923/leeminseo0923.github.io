@@ -6,20 +6,23 @@ br {
   display: block;
 }
 
-form {
-  text-align: center;
-}
-
 #reviewContent {
+  margin-left: 10vw;
   width: 80vw;
   height: 75vh;
 }
 
 #key {
+  margin-left: 10vw;
   width: 50vw;
   height: 3vh;
 }
 
 button {
   font-size: max(1vh, 1vw);
+}
+
+button > i {
+  font-size: max(1vh, 1vw);
+  padding-left: 1vw;
 }

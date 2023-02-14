@@ -13,6 +13,10 @@ button {
   border-radius: 10px;
 }
 
+ul {
+  list-style: none;
+}
+
 .title {
   font-size: max(2vw, 2vh);
   text-align: center;
@@ -40,4 +44,25 @@ ol {
 }
 ul {
   padding: 0;
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+#menubar {
+  margin-left: 10vw;
+  background-color: black;
+  text-align: center;
+  width: 80vw;
 }

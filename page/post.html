@@ -10,15 +10,27 @@
     <title>Review Posting</title>
   </head>
   <body>
-    <a id="back-button" href="./ps.html"
-      ><i class="fa-solid fa-arrow-left"></i><span id="back-text">Back</span></a
-    >
+    <a id="back-button" href="./ps.html">
+      <i class="fa-solid fa-arrow-left"></i><span id="back-text">Back</span>
+    </a>
     <h1 id="title"></h1>
+    <div id="menubar">
+      <button id="size"><i class="fa-solid fa-font"></i></button>
+      <button id="bold"><i class="fa-solid fa-bold"></i></button>
+      <button id="italic"><i class="fa-solid fa-italic"></i></button>
+      <button id="code"><i class="fa-solid fa-code"></i></button>
+      <button id="link"><i class="fa-solid fa-link"></i></button>
+      <button id="indent"><i class="fa-solid fa-indent"></i></button>
+      <button id="ol"><i class="fa-solid fa-list-ol"></i></button>
+      <button id="ul"><i class="fa-solid fa-list-ul"></i></button>
+      <button id="line"><i class="fa-solid fa-grip-lines"></i></button>
+    </div>
     <form method="post" id="postingForm">
       <textarea name="Content" id="reviewContent" cols="30" rows="10"></textarea>
       <input type="password" name="key" id="key" placeholder="key" />
       <button id="submit">Submit</button>
     </form>
+    <script src="../js/editMenu.js"></script>
   </body>
   <script src="../js/posting.js"></script>
 </html>

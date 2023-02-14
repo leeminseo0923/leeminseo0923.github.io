@@ -26,7 +26,7 @@ fetch(url)
     fileNames.forEach((item) => {
       const fileName = item[0];
       const fileUrl = item[1];
-      var fileList = document.createElement("ol");
+      var fileList = document.createElement("li");
       fileList.style.width = "max(38vw, 38vh)";
 
       var fileContainer = document.createElement("div");
