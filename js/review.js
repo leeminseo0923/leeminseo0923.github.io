@@ -23,8 +23,16 @@ fetch(url)
     const decoder = new TextDecoder("utf-8");
     const markdown = decoder.decode(byteArr);
 
-    const html = marked.parse(markdown);
+    var html = marked.parse(markdown);
+
     htmlOutput.innerHTML = html;
+  })
+  .then(() => {
+    // const code = document.querySelector("code");
+    // const pre = document.querySelector("pre");
+    // pre.classList.add("language-cpp");
+    // code.classList.add("language-cpp");
+    // // code.innerHTML = Prism.highlight;
   });
 
 const editButton = document.querySelector("button");
