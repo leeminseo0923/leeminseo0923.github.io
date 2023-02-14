@@ -35,22 +35,43 @@ fetch(url)
         questionName.innerText = innertext;
         questionName.style.display = "inline-block";
 
-        var addReview = document.createElement("i");
-        addReview.classList.add("fa-solid");
-        addReview.classList.add("fa-plus");
-        addReview.style.marginLeft = "min(1vw, 1vh)";
-        addReview.style.fontSize = "min(3vw, 3vh)";
+        var button = document.createElement("a");
+        var review = undefined;
 
-        var addButton = document.createElement("a");
-        addButton.appendChild(addReview);
-        addButton.href = `./post.html?${innertext}`;
+        var mdList = [];
 
-        fileContainer.appendChild(questionName);
-        fileContainer.appendChild(containerUrl);
-        fileList.appendChild(fileContainer);
-        fileList.appendChild(addButton);
+        fetch(`https://api.github.com/repos/${owner}/leeminseo0923.github.io/contents/md`)
+          .then((response) => response.json())
+          .then((data) => {
+            data.forEach((item) => {
+              mdList.push(item.name);
+            });
+          })
+          .then(() => {
+            if (mdList.includes(innertext + ".md")) {
+              review = document.createElement("button");
+              review.innerText = "Review";
+              review.onclick = () => (location.href = `./review.html?${innertext}`);
+            } else {
+              review = document.createElement("i");
+              review.classList.add("fa-solid");
+              review.classList.add("fa-plus");
+              review.style.marginLeft = "min(1vw, 1vh)";
+              review.style.fontSize = "min(3vw, 3vh)";
+              button.href = `./post.html?${innertext}`;
+            }
+          })
 
-        psList.appendChild(fileList);
+          .then(() => {
+            button.appendChild(review);
+
+            fileContainer.appendChild(questionName);
+            fileContainer.appendChild(containerUrl);
+            fileList.appendChild(fileContainer);
+            fileList.appendChild(button);
+
+            psList.appendChild(fileList);
+          });
       }
     });
   })

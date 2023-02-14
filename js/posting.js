@@ -19,26 +19,74 @@ submit.addEventListener("submit", (event) => {
   var content = event.target[0].value;
   var key = event.target[1].value;
 
+  const encoder = new TextEncoder();
+  const encodedContent = encoder.encode(content);
+
   const headers = {
     Authorization: `Bearer ${key}`,
     "Content-Type": "application/json",
   };
 
-  const body = {
-    message: message,
-    content: btoa(decodeURIComponent(encodeURIComponent(content))),
-  };
+  var fileNames = [];
 
-  fetch(url, {
-    method: "PUT",
-    headers: headers,
-    body: JSON.stringify(body),
-  })
+  fetch(`https://api.github.com/repos/${owner}/${repo}/contents/md`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      data.forEach((element) => {
+        fileNames.push(element.name);
+      });
     })
-    .catch((error) => {
-      console.log(error);
+    .then(() => {
+      if (fileNames.includes(`${questionName}.md`)) {
+        fetch(url, {
+          method: "GET",
+          headers: headers,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            const sha = data.sha;
+
+            const body = {
+              message: message,
+              content: btoa(String.fromCharCode(...encodedContent)), // base64-encoded content
+              sha: sha,
+            };
+
+            fetch(url, {
+              method: "PUT",
+              headers: headers,
+              body: JSON.stringify(body),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                console.log(data);
+              })
+              .catch((error) => {
+                console.error(error);
+              });
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      } else {
+        const body = {
+          message: message,
+          content: btoa(String.fromCharCode(...encodedContent)), // base64-encoded content
+        };
+
+        fetch(url, {
+          method: "PUT",
+          headers: headers,
+          body: JSON.stringify(body),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
     });
 });

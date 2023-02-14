@@ -11,6 +11,14 @@ body {
   user-select: none;
 }
 
+button {
+  margin-top: 1vh;
+  border: 0;
+  color: whitesmoke;
+  background-color: black;
+  border-radius: 10px;
+}
+
 #category {
   color: black;
   border-radius: 10px;

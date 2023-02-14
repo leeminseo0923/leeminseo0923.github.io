@@ -1,0 +1,24 @@
+#html-output {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  text-align: left;
+  width: 70vw;
+  height: 80vh;
+  border: 1px solid gray;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  overflow: scroll;
+}
+
+body {
+  text-align: center;
+}
+
+button {
+  margin-top: 1vh;
+  border: 0;
+  color: whitesmoke;
+  background-color: black;
+  font-size: min(3vh, 3vw);
+  border-radius: 10px;
+}
