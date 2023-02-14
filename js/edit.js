@@ -15,3 +15,7 @@ fetch(url)
 
     textArea.innerText = text;
   });
+
+const backBtn = document.querySelector("#back-button");
+
+backBtn.href = `./review.html?${questionName}`;

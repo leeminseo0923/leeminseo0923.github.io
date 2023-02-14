@@ -12,23 +12,10 @@ form {
 }
 
 #key {
-  width: 77vw;
+  width: 50vw;
   height: 3vh;
 }
 
-#back-button {
-  padding-left: 10px;
-}
-a {
-  color: black;
-  text-decoration: none;
-}
-
-#back-text {
-  font-size: calc(1vw + 1vh);
-  padding-left: 10px;
-}
-
-.fa-arrow-left {
-  font-size: min(3vw, 3vh);
+button {
+  font-size: min(2vh, 2vw);
 }
