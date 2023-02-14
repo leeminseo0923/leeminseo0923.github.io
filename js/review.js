@@ -28,11 +28,7 @@ fetch(url)
     htmlOutput.innerHTML = html;
   })
   .then(() => {
-    // const code = document.querySelector("code");
-    // const pre = document.querySelector("pre");
-    // pre.classList.add("language-cpp");
-    // code.classList.add("language-cpp");
-    // // code.innerHTML = Prism.highlight;
+    Prism.highlightAll();
   });
 
 const editButton = document.querySelector("button");

@@ -19,8 +19,8 @@ fetch(url)
       }
     });
     fileNames.sort((a, b) => {
-      a_ = parseInt(a[0]);
-      b_ = parseInt(b[0]);
+      a_ = Number(a[0]);
+      b_ = Number(b[0]);
       return a_ - b_;
     });
     fileNames.forEach((item) => {
