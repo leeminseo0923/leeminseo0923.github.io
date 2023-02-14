@@ -13,7 +13,9 @@ fetch(url)
     const decoder = new TextDecoder("utf-8");
     const text = decoder.decode(byteArr);
 
-    textArea.innerText = text;
+    text.replace(/(?:\r\n|\r|\n)/g, "&nbsp");
+
+    textArea.innerHTML = text;
   });
 
 const backBtn = document.querySelector("#back-button");
