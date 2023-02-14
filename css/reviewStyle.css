@@ -11,5 +11,5 @@
 }
 
 button {
-  font-size: min(3vh, 3vw);
+  font-size: max(3vh, 3vw);
 }
