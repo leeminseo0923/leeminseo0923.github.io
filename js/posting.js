@@ -83,11 +83,9 @@ submit.addEventListener("submit", (event) => {
           body: JSON.stringify(body),
         })
           .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-          })
+          .then((data) => {})
           .catch((error) => {
-            console.error(error);
+            alert(error);
           });
       }
     })

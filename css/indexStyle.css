@@ -42,3 +42,8 @@
 .menu-text {
   padding-left: 10%;
 }
+
+#notion {
+  width: max(1.3vw, 1.3vh);
+  height: max(1.3vw, 1.3vh);
+}
