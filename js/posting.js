@@ -17,8 +17,6 @@ const url = `https://api.github.com/repos/${owner}/${repo}/contents${path}`;
 const backBtn = document.getElementById("back-button");
 
 submit.addEventListener("submit", (event) => {
-  const href = backBtn.href;
-  backBtn.href = "";
   event.preventDefault();
   var content = event.target[0].value;
   var key = event.target[1].value;
@@ -94,6 +92,6 @@ submit.addEventListener("submit", (event) => {
       }
     })
     .then(() => {
-      backBtn.href = href;
+      alert("Done!");
     });
 });
