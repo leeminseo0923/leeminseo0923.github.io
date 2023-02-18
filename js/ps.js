@@ -18,9 +18,7 @@ fetch(url)
         fileNames.push([item.name.slice(0, extensionId), item.html_url]);
       }
     });
-    fileNames.sort((a, b) => {
-      return Number(a) > Number(b);
-    });
+    fileNames.sort();
     fileNames.forEach((item) => {
       const fileName = item[0];
       const fileUrl = item[1];
