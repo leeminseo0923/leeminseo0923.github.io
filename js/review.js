@@ -1,8 +1,6 @@
 import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
 
-const octokit = new Octokit({
-  auth: "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",
-});
+const octokit = new Octokit({});
 
 const questionName = location.href.split("?")[1];
 const owner = "leeminseo0923";

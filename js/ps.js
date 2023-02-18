@@ -1,20 +1,22 @@
 import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
 var psList = document.getElementById("acmicpc");
 
-const owner = "leeminseo0923";
-const repo = "Competive-Programming";
+// const owner = "leeminseo0923";
+// const repo = "Competive-Programming";
 
-const path = ["/acimpic"];
+// const path = ["acimpic"];
 
-const octokit = new Octokit({
-  auth: "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",
-});
+const octokit = new Octokit({});
 
-let codeList = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}/", {
-  owner: owner,
-  repo: repo,
-  path: path,
-});
+octokit
+  .request("GET /repos/{owner}/{repo}/contents/{path}", {
+    owner: "leeminseo0923",
+    repo: "Competive-Programming",
+    path: "acmicpc",
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 let mdData = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}", {
   owner: owner,
