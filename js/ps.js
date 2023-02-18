@@ -1,12 +1,7 @@
-import { App, Octokit } from "https://cdn.skypack.dev/@octokit/rest";
+import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
 var psList = document.getElementById("acmicpc");
 
 const octokit = new Octokit({});
-
-const app = new App({
-  appId: APP_ID,
-  privateKey: PRIVATE_KEY,
-});
 
 let codeList = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}", {
   owner: "leeminseo0923",
