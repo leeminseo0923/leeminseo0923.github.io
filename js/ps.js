@@ -1,3 +1,4 @@
+import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
 var psList = document.getElementById("acmicpc");
 
 const owner = "leeminseo0923";
@@ -5,80 +6,85 @@ const repo = "Competive-Programming";
 
 const path = ["/acimpic"];
 
-const url = `https://api.github.com/repos/${owner}/${repo}/contents${path[0]}`;
+const octokit = new Octokit({
+  auth: "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",
+});
 
-fetch(url)
-  .then((response) => response.json())
-  .then((data) => {
-    var fileNames = [];
-    data.forEach((item) => {
-      if (item.name.includes(".c")) {
-        extensionId = item.name.indexOf(".c");
+let codeList = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}/", {
+  owner: owner,
+  repo: repo,
+  path: path,
+});
 
-        fileNames.push([item.name.slice(0, extensionId), item.html_url]);
-      }
-    });
-    fileNames.sort();
-    fileNames.forEach((item) => {
-      const fileName = item[0];
-      const fileUrl = item[1];
-      var fileList = document.createElement("li");
-      fileList.style.width = "max(38vw, 38vh)";
+let mdData = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}", {
+  owner: owner,
+  repo: "leeminseo0923.github.io",
+  path: "md",
+});
 
-      var fileContainer = document.createElement("div");
-      fileContainer.classList.add("textList");
+var mdList = [];
 
-      var questionName = document.createElement("a");
-      questionName.href = `https://acmicpc.net/problem/${fileName}`;
+mdData.data.forEach((item) => {
+  mdList.push(item.name);
+});
 
-      var containerUrl = document.createElement("a");
-      containerUrl.href = fileUrl;
-      containerUrl.innerText = "source code..";
-      containerUrl.classList.add("codeUrl");
+var fileNames = [];
 
-      questionName.innerText = fileName;
-      questionName.style.display = "inline-block";
-      questionName.style.textDecoration = "none";
+codeList.data.forEach((item) => {
+  if (item.name.includes(".c")) {
+    let extensionId = item.name.indexOf(".c");
 
-      var button = document.createElement("a");
-      var review = undefined;
+    fileNames.push([item.name.slice(0, extensionId), item.html_url]);
+  }
+});
 
-      var mdList = [];
+fileNames.sort((a, b) => {
+  return parseInt(a) > parseInt(b);
+});
+fileNames.forEach((item) => {
+  const fileName = item[0];
+  const fileUrl = item[1];
 
-      fetch(`https://api.github.com/repos/${owner}/leeminseo0923.github.io/contents/md`)
-        .then((response) => response.json())
-        .then((data) => {
-          data.forEach((item) => {
-            mdList.push(item.name);
-          });
-        })
-        .then(() => {
-          if (mdList.includes(fileName + ".md")) {
-            review = document.createElement("button");
-            review.innerText = "Review";
-            review.onclick = () => (location.href = `./review.html?${fileName}`);
-          } else {
-            review = document.createElement("i");
-            review.classList.add("fa-solid");
-            review.classList.add("fa-plus");
-            review.style.marginLeft = "min(1vw, 1vh)";
-            review.style.fontSize = "min(3vw, 3vh)";
-            button.href = `./post.html?${fileName}`;
-          }
-        })
+  var fileList = document.createElement("li");
+  fileList.style.width = "max(38vw, 38vh)";
 
-        .then(() => {
-          button.appendChild(review);
+  var fileContainer = document.createElement("div");
+  fileContainer.classList.add("textList");
 
-          fileContainer.appendChild(questionName);
-          fileContainer.appendChild(containerUrl);
-          fileList.appendChild(fileContainer);
-          fileList.appendChild(button);
+  var questionName = document.createElement("a");
+  questionName.href = `https://acmicpc.net/problem/${fileName}`;
 
-          psList.appendChild(fileList);
-        });
-    });
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+  var containerUrl = document.createElement("a");
+  containerUrl.href = fileUrl;
+  containerUrl.innerText = "source code..";
+  containerUrl.classList.add("codeUrl");
+
+  questionName.innerText = fileName;
+  questionName.style.display = "inline-block";
+  questionName.style.textDecoration = "none";
+
+  var button = document.createElement("a");
+  var review = undefined;
+
+  if (mdList.includes(fileName + ".md")) {
+    review = document.createElement("button");
+    review.innerText = "Review";
+    review.onclick = () => (location.href = `./review.html?${fileName}`);
+  } else {
+    review = document.createElement("i");
+    review.classList.add("fa-solid");
+    review.classList.add("fa-plus");
+    review.style.marginLeft = "min(1vw, 1vh)";
+    review.style.fontSize = "min(3vw, 3vh)";
+    button.href = `./post.html?${fileName}`;
+  }
+
+  button.appendChild(review);
+
+  fileContainer.appendChild(questionName);
+  fileContainer.appendChild(containerUrl);
+  fileList.appendChild(fileContainer);
+  fileList.appendChild(button);
+
+  psList.appendChild(fileList);
+});

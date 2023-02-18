@@ -47,3 +47,6 @@
   width: max(1.3vw, 1.3vh);
   height: max(1.3vw, 1.3vh);
 }
+a {
+  text-decoration: none;
+}

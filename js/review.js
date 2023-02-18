@@ -1,19 +1,25 @@
+import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
+
+const octokit = new Octokit({
+  auth: "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",
+});
+
 const questionName = location.href.split("?")[1];
 const owner = "leeminseo0923";
 const repo = "leeminseo0923.github.io";
 const path = `/md/${questionName}.md`;
 
-const url = `https://api.github.com/repos/${owner}/${repo}/contents${path}`;
+const api = `GET /repos/${owner}/${repo}/contents${path}`;
 
 const title = document.querySelector(".title");
 
 title.innerHTML = `${questionName} Review`;
 
 const htmlOutput = document.getElementById("html-output");
-fetch(url)
-  .then((response) => response.json())
+octokit
+  .request(api)
   .then((data) => {
-    base64 = data.content;
+    let base64 = data.data.content;
     const byteArr = new Uint8Array(
       atob(base64)
         .split("")
