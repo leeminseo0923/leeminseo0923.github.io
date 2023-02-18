@@ -19,9 +19,7 @@ fetch(url)
       }
     });
     fileNames.sort((a, b) => {
-      a_ = Number(a[0]);
-      b_ = Number(b[0]);
-      return a_ - b_;
+      return Number(a) > Number(b);
     });
     fileNames.forEach((item) => {
       const fileName = item[0];
