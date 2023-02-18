@@ -42,6 +42,7 @@ fetch(url)
 
       questionName.innerText = fileName;
       questionName.style.display = "inline-block";
+      questionName.style.textDecoration = "none";
 
       var button = document.createElement("a");
       var review = undefined;

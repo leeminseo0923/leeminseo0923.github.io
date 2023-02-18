@@ -24,7 +24,6 @@ ul {
 
 a {
   color: black;
-  text-decoration: none;
 }
 
 .fa-arrow-left {
@@ -33,6 +32,7 @@ a {
 
 #back-button {
   padding-left: 10px;
+  text-decoration: none;
 }
 
 #back-text {
