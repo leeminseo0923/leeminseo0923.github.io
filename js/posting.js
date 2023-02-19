@@ -66,7 +66,7 @@ submit.addEventListener("submit", (event) => {
             repo: repo,
             path: path,
             message: message,
-            content: content,
+            content: btoa(String.fromCharCode(...encodedContent)),
           })
           .catch((error) => {
             alert(error);
