@@ -30,6 +30,8 @@ octokit
     var html = marked.parse(markdown);
 
     htmlOutput.innerHTML = html;
+    MathJax.typesetClear([htmlOutput]);
+    MathJax.typesetPromise([htmlOutput]);
   })
   .then(() => {
     Prism.highlightAll();

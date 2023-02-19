@@ -224,7 +224,7 @@ linkBtn.addEventListener("click", () => {
   } else {
     selection = textArea.value.substring(selectionStart, selectionEnd);
   }
-  var newText = `[${selection}](https://)"`;
+  var newText = `[${selection}](https://)`;
 
   textArea.value =
     textArea.value.substring(0, selectionStart) + newText + textArea.value.substring(selectionEnd);
