@@ -32,7 +32,7 @@ codeList.data.forEach((item) => {
 });
 
 fileNames.sort((a, b) => {
-  return parseInt(a) > parseInt(b);
+  return parseInt(a) - parseInt(b);
 });
 fileNames.forEach((item) => {
   const fileName = item[0];
