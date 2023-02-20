@@ -10,7 +10,7 @@ title.innerText = `${questionName} Review`;
 const submit = document.getElementById("postingForm");
 
 const owner = "leeminseo0923";
-const repo = "leeminseo0923.github.io";
+const repo = "Competive-Programming";
 
 const path = `/md/${questionName}.md`;
 

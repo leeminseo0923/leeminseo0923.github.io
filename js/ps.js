@@ -11,7 +11,7 @@ let codeList = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}"
 
 let mdData = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}", {
   owner: "leeminseo0923",
-  repo: "leeminseo0923.github.io",
+  repo: "Competive-Programming",
   path: "md",
 });
 

@@ -4,7 +4,7 @@ const octokit = new Octokit({});
 
 const questionName = location.href.split("?")[1];
 const owner = "leeminseo0923";
-const repo = "leeminseo0923.github.io";
+const repo = "Competive-Programming";
 const path = `/md/${questionName}.md`;
 
 const api = `GET /repos/${owner}/${repo}/contents${path}`;
